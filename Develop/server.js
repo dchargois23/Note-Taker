@@ -6,11 +6,6 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 
-app.get('/', function (req, res) {
-    res.send("Hello World");
-})
-
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,8 +13,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-require("./Routes/apiroutes")(app);
-require("./Routes/htmlroutes")(app);
+require("./routing/apiroutes")(app);
+require("./routing/htmlroutes")(app);
 
 
 
