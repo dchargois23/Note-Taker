@@ -66,14 +66,15 @@ module.exports = function (app) {
 
   app.delete("/api/notes/:id", function (req, res) {
 
-    req.params.id
 
-    noteData.filter((item) => {
+    noteData = noteData.filter((item) => {
 
-      return item.id !== req.params.id;
+      return item.id !== parseInt(req.params.id);
 
     })
 
+    console.log(noteData);
+    res.json(noteData);
 
 
   });
